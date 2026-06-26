@@ -1,0 +1,23 @@
+# Local Postgres (with pgvector) for development and tests. The API connects via
+# DATABASE_URL (see apps/api/.env.example). Data persists in the named volume.
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    container_name: sourcesage-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: sourcesage
+      POSTGRES_PASSWORD: sourcesage
+      POSTGRES_DB: sourcesage
+    ports:
+      - '5432:5432'
+    volumes:
+      - sourcesage-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U sourcesage']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  sourcesage-pgdata:

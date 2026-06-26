@@ -1,0 +1,65 @@
+// Prisma schema for the SourceSage API.
+//
+// Two concerns: persisted chat history (Conversation/Message) and the RAG
+// corpus (Document/Chunk). Chunk embeddings use pgvector — the `vector` column
+// is declared as Unsupported() because Prisma has no native vector type; the
+// similarity search runs via `$queryRaw` with the `<=>` cosine-distance
+// operator (see src/lib/rag.ts).
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [vector]
+}
+
+model Conversation {
+  id        String    @id @default(cuid())
+  title     String    @default("New conversation")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  messages  Message[]
+
+  @@map("conversations")
+}
+
+model Message {
+  id             String       @id @default(cuid())
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  role           String // 'user' | 'assistant'
+  content        String
+  createdAt      DateTime     @default(now())
+
+  @@index([conversationId])
+  @@map("messages")
+}
+
+model Document {
+  id        String   @id @default(cuid())
+  title     String
+  url       String?
+  source    String   @unique // stable key (filename) so re-seeding is idempotent
+  createdAt DateTime @default(now())
+  chunks    Chunk[]
+
+  @@map("documents")
+}
+
+model Chunk {
+  id         String   @id @default(cuid())
+  documentId String
+  document   Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  index      Int
+  content    String
+  // pgvector column — voyage-3 emits 1024-dim embeddings.
+  embedding  Unsupported("vector(1024)")?
+  createdAt  DateTime @default(now())
+
+  @@index([documentId])
+  @@map("chunks")
+}

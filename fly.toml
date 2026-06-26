@@ -1,0 +1,30 @@
+# fly.toml app configuration file generated for sourcesage on 2026-06-26T14:46:15-04:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'sourcesage'
+primary_region = 'iad'
+
+[build]
+
+[deploy]
+  # Single top-level command — the `&&` lives inside the api `release` script
+  # (script bodies run under a shell; Fly's release_command does not).
+  release_command = 'pnpm --filter @sourcesage/api run release'
+
+[env]
+  HOST = '0.0.0.0'
+  PORT = '3000'
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  size = 'shared-cpu-1x'
+  memory = '512mb'
