@@ -20,3 +20,103 @@ body {
   color: var(--color-fg);
   font-family: var(--font-sans);
 }
+
+/* Syntax highlighting for assistant code blocks (rehype-highlight / highlight.js).
+ * GitHub-style palette that swaps with the design-system dark theme. The code
+ * box background/foreground come from the `pre` element's design tokens. */
+.hljs {
+  color: var(--color-fg);
+  background: transparent;
+}
+.hljs-comment,
+.hljs-quote {
+  color: #6e7781;
+  font-style: italic;
+}
+.hljs-keyword,
+.hljs-built_in,
+.hljs-type,
+.hljs-literal,
+.hljs-selector-tag {
+  color: #cf222e;
+}
+.hljs-string,
+.hljs-regexp,
+.hljs-char.escape_,
+.hljs-addition {
+  color: #0a3069;
+}
+.hljs-number,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attr,
+.hljs-attribute,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #0550ae;
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.function_,
+.hljs-section,
+.hljs-name {
+  color: #8250df;
+}
+.hljs-meta,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #116329;
+}
+.hljs-deletion {
+  color: #82071e;
+}
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: 600;
+}
+
+[data-theme~='dark'] .hljs-comment,
+[data-theme~='dark'] .hljs-quote {
+  color: #8b949e;
+}
+[data-theme~='dark'] .hljs-keyword,
+[data-theme~='dark'] .hljs-built_in,
+[data-theme~='dark'] .hljs-type,
+[data-theme~='dark'] .hljs-literal,
+[data-theme~='dark'] .hljs-selector-tag {
+  color: #ff7b72;
+}
+[data-theme~='dark'] .hljs-string,
+[data-theme~='dark'] .hljs-regexp,
+[data-theme~='dark'] .hljs-char.escape_,
+[data-theme~='dark'] .hljs-addition {
+  color: #a5d6ff;
+}
+[data-theme~='dark'] .hljs-number,
+[data-theme~='dark'] .hljs-variable,
+[data-theme~='dark'] .hljs-template-variable,
+[data-theme~='dark'] .hljs-attr,
+[data-theme~='dark'] .hljs-attribute,
+[data-theme~='dark'] .hljs-selector-attr,
+[data-theme~='dark'] .hljs-selector-pseudo {
+  color: #79c0ff;
+}
+[data-theme~='dark'] .hljs-title,
+[data-theme~='dark'] .hljs-title.class_,
+[data-theme~='dark'] .hljs-title.function_,
+[data-theme~='dark'] .hljs-section,
+[data-theme~='dark'] .hljs-name {
+  color: #d2a8ff;
+}
+[data-theme~='dark'] .hljs-meta,
+[data-theme~='dark'] .hljs-symbol,
+[data-theme~='dark'] .hljs-bullet,
+[data-theme~='dark'] .hljs-link {
+  color: #7ee787;
+}
+[data-theme~='dark'] .hljs-deletion {
+  color: #ffa198;
+}

@@ -10,6 +10,7 @@ import {
 } from '@jasonruesch/react';
 import { Bot, User } from 'lucide-react';
 import type { UiMessage } from '~/lib/chat-types';
+import { Markdown } from './markdown';
 import { SourcesList } from './sources-list';
 import { ToolActivityList } from './tool-activity';
 
@@ -79,9 +80,9 @@ function AssistantBody({
               Thinking
             </AccordionTrigger>
             <AccordionContent>
-              <p className="text-xs break-words whitespace-pre-wrap text-fg-muted">
-                {message.thinking}
-              </p>
+              <div className="text-xs text-fg-muted">
+                <Markdown>{message.thinking}</Markdown>
+              </div>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
@@ -95,9 +96,7 @@ function AssistantBody({
         </span>
       )}
 
-      {message.content && (
-        <p className="break-words whitespace-pre-wrap">{message.content}</p>
-      )}
+      {message.content && <Markdown>{message.content}</Markdown>}
 
       {message.error && (
         <Alert variant="danger" className="mt-2">
