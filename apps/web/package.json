@@ -15,15 +15,18 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@sourcesage/shared": "workspace:*",
     "@evolonix/react-router-next": "^3.6.1",
     "@jasonruesch/react": "^0.3.5",
     "@jasonruesch/tokens": "^0.1.1",
+    "@sourcesage/shared": "workspace:*",
     "@tanstack/react-query": "^5.101.0",
     "lucide-react": "^1.21.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "react-markdown": "^10.1.0",
     "react-router": "^8.0.1",
+    "rehype-highlight": "^7.0.2",
+    "remark-gfm": "^4.0.1",
     "zod": "^4.4.3",
     "zustand": "^5.0.14"
   },
