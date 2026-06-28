@@ -6,3 +6,5 @@ allowBuilds:
   "@prisma/engines": true
   prisma: true
   esbuild: true
+minimumReleaseAgeExclude:
+  - '@jasonruesch/react@0.3.5'

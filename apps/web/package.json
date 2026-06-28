@@ -17,7 +17,7 @@
   "dependencies": {
     "@sourcesage/shared": "workspace:*",
     "@evolonix/react-router-next": "^3.6.1",
-    "@jasonruesch/react": "^0.3.1",
+    "@jasonruesch/react": "^0.3.5",
     "@jasonruesch/tokens": "^0.1.1",
     "@tanstack/react-query": "^5.101.0",
     "lucide-react": "^1.21.0",

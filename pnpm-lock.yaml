@@ -88,8 +88,8 @@ importers:
         specifier: ^3.6.1
         version: 3.6.1(react-dom@19.2.7(react@19.2.7))(react-router@8.0.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)(vite@8.1.0(@types/node@26.0.1)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.22.4))
       '@jasonruesch/react':
-        specifier: ^0.3.1
-        version: 0.3.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: ^0.3.5
+        version: 0.3.5(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@jasonruesch/tokens':
         specifier: ^0.1.1
         version: 0.1.2
@@ -793,8 +793,8 @@ packages:
     resolution: {integrity: sha512-AokJm4tuBHillT+FpMtxQ60n8ObyXBatq7jD2/JA9dxbDDokKQm8KMht5ibGzLVU9IJDIKK4TPKgMHEYMn3lMg==}
     engines: {node: '>=18'}
 
-  '@jasonruesch/react@0.3.2':
-    resolution: {integrity: sha512-7XDIFfJTKe3An8ITRcu9HepzRSMzFzP/FtKTBJcFzQkRvyBjK/9QO+19V1hRmu7E/etHmZNArquBLHJ/UEYubg==}
+  '@jasonruesch/react@0.3.5':
+    resolution: {integrity: sha512-j5TtgekmUtNFJiNLj8zzVlciU13F6ouo2U3FmeAgvlZzJixgwlPz2xomZZr2YB3+XjpljL4J6Rlh6PFmcLIVww==}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
@@ -3819,7 +3819,7 @@ snapshots:
 
   '@isaacs/cliui@9.0.0': {}
 
-  '@jasonruesch/react@0.3.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@jasonruesch/react@0.3.5(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       '@jasonruesch/tokens': 0.1.2
       '@radix-ui/react-accordion': 1.2.14(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
